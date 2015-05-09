@@ -112,13 +112,13 @@ int main(int argc, char* argv[])
 	//uint32_t f_mhz = 11.059200*3;
 	//uint32_t f_mhz = 12*3;
 	//uint32_t f_mhz = 12;
-	float f_mhz = 12;
+	float f_mhz = 12; // CPU clock frequency in MHz
 	//float f_mhz = 14.7456;
 	//float f_mhz = 11.0592;
-	float sp_proc = 87.5;
-	float sp_err = 5;
+        float  sp_proc = 87.5; // SP value in percent
+        float  sp_err  = 5;    // Possible error of SP  setting
 
-	printf("\n\rSettings: F_CPU: %fMHz, SP: %.2f, SRE: %.2f\n\r\n\r", f_mhz, sp_proc, sp_err);
+	printf("\n\rSettings: F_CPU: %.2fMHz, SP: %.2f, SPE: %.0f%%\n\r\n\r", f_mhz, sp_proc, sp_err);
 	//----------------------------------------------------------------------------
 	// Feel need speed
 	//----------------------------------------------------------------------------
