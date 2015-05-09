@@ -106,7 +106,7 @@ void CANCalc(tCANBauds *out, float f_osc, float SamplePiont, float SamplePiontEr
 	}
 }
 //------------------------------------------------------------------------------
-void main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 	//----------------------------------------------------------------------------
 	//uint32_t f_mhz = 11.059200*3;
@@ -118,7 +118,7 @@ void main(int argc, char* argv[])
 	float sp_proc = 87.5;
 	float sp_err = 5;
 
-	printf("Settings: F_CPU - %fMHz, SP - %.2f, SRE - %.2f\n\n", f_mhz, sp_proc, sp_err);
+	printf("\n\rSettings: F_CPU: %fMHz, SP: %.2f, SRE: %.2f\n\r\n\r", f_mhz, sp_proc, sp_err);
 	//----------------------------------------------------------------------------
 	// Feel need speed
 	//----------------------------------------------------------------------------
@@ -148,7 +148,7 @@ void main(int argc, char* argv[])
 	//----------------------------------------------------------------------------
 	// Print resul table
 	//----------------------------------------------------------------------------
-	printf("BR\tBR_Error\tSP\tSP_Error\tBRP BS1 BS2 SJW\n");
+	printf("BitRate\t BR_Error\tSP (Error)\tBRP BS1 BS2 SJW\n\r");
 	
 	for (size_t i = 0; i < CANBauds.size(); ++i)
 	{
@@ -158,7 +158,7 @@ void main(int argc, char* argv[])
 		{
 			tCANSpeedSetup *_css = &_csb->at(j);
 
-			printf("%.f\t(%e)\t%.2f\t(%.2e)\t" "%3d %2d %1d %1d\n",
+			printf("%.fk\t(%.2e)\t%.1f (%.0f%%)\t%3d  %2d   %1d   %1d\n\r",
 			(_css->BaudRate/1000),
 			_css->BR_Error,
 			_css->SamplePoint,
@@ -170,8 +170,8 @@ void main(int argc, char* argv[])
 		}
 	}
 	//----------------------------------------------------------------------------
-	printf("\nPress any key..");
-	getchar();
+	//printf("\nPress any key..");
+	//getchar();
 	//----------------------------------------------------------------------------
 	return 0;
 }
