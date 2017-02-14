@@ -1,7 +1,7 @@
 STM8S208-CAN-Speed-Calculator
 =============================
 
-NOTE: Russian description availavble here: http://idoka.ru/canbus-on-stm8s-discovery-with-stm8s208/
+Russian description availavble here: http://idoka.ru/canbus-on-stm8s-discovery-with-stm8s208/
 
 Just Change several parameters in main.cpp  according your settings:
 ```c
